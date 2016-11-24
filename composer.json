@@ -1,0 +1,20 @@
+{
+  "name": "ga/resque",
+  "description": "desc",
+  "license": "null",
+  "authors": [
+    {
+      "name": "liuzexin",
+      "email": "liuzexin_top@163.com"
+    }
+  ],
+  "minimum-stability": "stable",
+  "require": {
+      "chrisboulton/php-resque": "1.2.x"
+  },
+  "autoload": {
+    "psr-4": {
+      "ga\\resque\\": ""
+    }
+  }
+}
