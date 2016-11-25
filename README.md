@@ -1,9 +1,10 @@
 #Yii2-resque(best,easy)
 ##Install
+You need to use composer
 ```bash
 composer require ga/resque dev-master
 ```
-You need to use composer 
+ 
 
 ##Set up
 
