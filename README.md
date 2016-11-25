@@ -16,14 +16,8 @@
        'database' => 0,             // Redis database number
    ],
 ```
-3.Enqueue and dequeue the job task.
-```php
-   \Yii::$app->resque->enqueue('default', 'BadJob', [1], true);
-   \Yii::$app->resque->dequeue('default', 'BadJob', [1], true);
-```
-Param `default` is queue name,`BadJob` is the class of which will complete the work. Param `[1]` is `array` params for `BadJob`. 
 
-4.Create `*Job.php` in models directory.
+3.Create `*Job.php` in models directory.
 
 example:
 ```php
@@ -64,13 +58,8 @@ The `perform()` method  will deal with work,`setUp()` will run at begin of work,
        'database' => 0,             // Redis database number
    ],
 ```
-3.Enqueue and dequeue the job task.
-```php
-   \Yii::$app->resque->enqueue('default', 'BadJob', [1], true);
-   \Yii::$app->resque->dequeue('default', 'BadJob', [1], true);
-```
-Param `default` is queue name,`BadJob` is the class of which will complete the work. Param `[1]` is `array` params for `BadJob`. 
-4.Create `*Job.php` in models directory.
+
+3.Create `*Job.php` in models directory.
 
 example:
 ```php
@@ -100,6 +89,17 @@ The `perform()` method  will deal with work,`setUp()` will run at begin of work,
 
 ## Usage
 
+Enqueue and dequeue the job task.
+```php
+   \Yii::$app->resque->enqueue('default', 'BadJob', [1], true);
+   \Yii::$app->resque->dequeue('default', 'BadJob', [1], true);
+   \Yii::$app->resque->size('default');
+   ...
+```
+More information you can also see the [php-resque]!(https://github.com/chrisboulton/php-resque)
+*NOTICE:* `dequeue()`  not available now, can be use in the future.
+
+Param `default` is queue name,`BadJob` is the class of which will complete the work. Param `[1]` is `array` params for `BadJob`. 
 In the root of project directory, run following code:
 ```PHP
 QUEUE=* ./yii resque
