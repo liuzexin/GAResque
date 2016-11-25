@@ -72,7 +72,7 @@ class GAResque extends Component
      */
     public function size($queue)
     {
-        return \Resque::size($queue);;
+        return \Resque::size($queue);
     }
 
     /**
