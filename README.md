@@ -102,7 +102,7 @@ Enqueue and dequeue the job task.
    \Yii::$app->resque->size('default');
    ...
 ```
-More information you can also see the [php-resque][1]
+More information you can also see the [php-resque][1].
 
 **NOTICE:** `dequeue()`  not available now, can be use in the future.
 
