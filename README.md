@@ -23,7 +23,7 @@ composer require ga/resque dev-master
    ],
 ```
 
-3.Create `*Job.php` in models(include console,frontend,backend,common) directory.
+3.Create `*Job.php` in models directory.
 
 example:
 ```php
@@ -65,7 +65,7 @@ The `perform()` method  will deal with work,`setUp()` will run at begin of work,
    ],
 ```
 
-3.Create `*Job.php` in models directory.
+3.Create `*Job.php` in models(include console,frontend,backend,common) directory.
 
 example:
 ```php
