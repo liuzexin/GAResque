@@ -102,7 +102,7 @@ Enqueue and dequeue the job task.
    \Yii::$app->resque->size('default');
    ...
 ```
-More information you can also see the [php-resque]:https://github.com/chrisboulton/php-resque
+More information you can also see the [php-resque][1]
 
 **NOTICE:** `dequeue()`  not available now, can be use in the future.
 
@@ -115,3 +115,4 @@ QUEUE=* ./yii resque
 **NOTICE:**`*` means will start all queues.You can replace `*` with queue name or like this`QUEUE=default1,default2` will run specified queue.
 
 
+[1]:https://github.com/chrisboulton/php-resque
