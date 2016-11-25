@@ -1,7 +1,8 @@
 {
-  "name": "ga/resque",
-  "description": "desc",
+  "name": "ga/yii2-resque",
+  "description": "yii2-resque",
   "license": "null",
+  "keywords": ["yii2", "resque", "ga"],
   "authors": [
     {
       "name": "liuzexin",
@@ -10,7 +11,8 @@
   ],
   "minimum-stability": "stable",
   "require": {
-      "chrisboulton/php-resque": "1.2.x"
+      //可以相应的修改
+      "chrisboulton/php-resque": "dev-master"
   },
   "autoload": {
     "psr-4": {
