@@ -1,5 +1,5 @@
 {
-  "name": "ga/yii2-resque",
+  "name": "ga/resque",
   "description": "yii2-resque",
   "license": "null",
   "keywords": ["yii2", "resque", "ga"],
@@ -11,7 +11,6 @@
   ],
   "minimum-stability": "stable",
   "require": {
-      //可以相应的修改
       "chrisboulton/php-resque": "dev-master"
   },
   "autoload": {
