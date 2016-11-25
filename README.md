@@ -111,6 +111,6 @@ In the root of project directory, run following code:
 QUEUE=* ./yii resque
 ```
 
-**NOTICE:**`*` means will start all queue.You can replace `*` with queue name or like this`QUEUE=default1,default2` will run specified queue.
+**NOTICE:**`*` means will start all queues.You can replace `*` with queue name or like this`QUEUE=default1,default2` will run specified queue.
 
 
