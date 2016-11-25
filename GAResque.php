@@ -36,15 +36,86 @@ class GAResque extends Component
     public function enqueue($queue_name, $job_class, $param, $track_status = true){
         return \Resque::enqueue($queue_name, $job_class, $param, $track_status);
     }
-    /**
-     * Remove items of the specified queue
-     *
-     * @param string $queue_name The name of the queue to fetch an item from.
-     * @param array $items
-     * @return integer number of deleted items
-     */
 
-    public function dequeue($queue_name, $items){
-        return \Resque::dequeue($queue_name, $items);
+//    /**
+//     * Remove items of the specified queue
+//     *
+//     * @param string $queue_name The name of the queue to fetch an item from.
+//     * @param array $items
+//     * @return integer number of deleted items
+//     */
+
+//    public function dequeue($queue_name, $items){
+//        return \Resque::dequeue($queue_name, $items);
+//    }
+//
+//    /**
+//     * Remove specified queue
+//     *
+//     * @param string $queue The name of the queue to remove.
+//     * @return integer Number of deleted items
+//     */
+//    public function removeQueue($queue){
+//        return \Resque::removeQueue($queue);
+//    }
+//
+//    public function blpop(array $queues, $timeout){
+//        return \Resque::blpop($queues, $timeout);
+//    }
+
+    /**
+     * Return the size (number of pending jobs) of the specified queue.
+     *
+     * @param string $queue name of the queue to be checked for pending jobs
+     *
+     * @return int The size of the queue.
+     */
+    public function size($queue)
+    {
+        return \Resque::size($queue);;
     }
+
+    /**
+     * Push a job to the end of a specific queue. If the queue does not
+     * exist, then create it as well.
+     *
+     * @param string $queue The name of the queue to add the job to.
+     * @param array $item Job description as an array to be JSON encoded.
+     */
+    public function push($queue, $item){
+        \Resque::push($queue, $item);
+    }
+
+    /**
+     * Pop an item off the end of the specified queue, decode it and
+     * return it.
+     *
+     * @param string $queue The name of the queue to fetch an item from.
+     * @return array Decoded item from the queue.
+     */
+    public function pop($queue){
+        return \Resque::pop($queue);
+    }
+
+    /**
+     * Reserve and return the next available job in the specified queue.
+     *
+     * @param string $queue Queue to fetch next available job from.
+     * @return Resque_Job Instance of Resque_Job to be processed, false if none or error.
+     */
+    public static function reserve($queue)
+    {
+       return \Resque::reserve($queue);
+    }
+
+    /**
+     * Get an array of all known queues.
+     *
+     * @return array Array of queues.
+     */
+    public static function queues()
+    {
+        return \Resque::queues();
+    }
+
 }
