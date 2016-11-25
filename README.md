@@ -23,7 +23,7 @@ composer require ga/resque dev-master
    ],
 ```
 
-3.Create `*Job.php` in models directory.
+3.Create `*Job.php` in models(include console,frontend,backend,common) directory.
 
 example:
 ```php
