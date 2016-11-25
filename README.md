@@ -22,6 +22,7 @@
    \Yii::$app->resque->dequeue('default', 'BadJob', [1], true);
 ```
 Param `default` is queue name,`BadJob` is the class of which will complete the work. Param `[1]` is `array` params for `BadJob`. 
+
 4.Create `*Job.php` in models directory.
 
 example:
