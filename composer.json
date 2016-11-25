@@ -2,7 +2,7 @@
   "name": "ga/resque",
   "description": "yii2-resque",
   "license": "null",
-  "keywords": ["yii2", "resque", "ga"],
+  "keywords": ["yii2", "resque", "ga","yii2-resque"],
   "authors": [
     {
       "name": "liuzexin",
