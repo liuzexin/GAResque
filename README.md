@@ -1,4 +1,9 @@
 #Yii2-resque(best,easy)
+##Install
+```bash
+composer require ga/resque dev-master
+```
+You need to use composer 
 
 ##Set up
 
@@ -84,8 +89,8 @@ class MyJob
 }
 ```
 The `perform()` method  will deal with work,`setUp()` will run at begin of work, `tearDown()`will run at finished work.
-*NOTICE:*You must name the job file must *end with* `Job.php`.
 
+*NOTICE:You must name the job file must **end with** `Job.php`.
 
 ## Usage
 
@@ -96,14 +101,16 @@ Enqueue and dequeue the job task.
    \Yii::$app->resque->size('default');
    ...
 ```
-More information you can also see the [php-resque]!(https://github.com/chrisboulton/php-resque)
-*NOTICE:* `dequeue()`  not available now, can be use in the future.
+More information you can also see the [php-resque]:https://github.com/chrisboulton/php-resque
+
+**NOTICE:** `dequeue()`  not available now, can be use in the future.
 
 Param `default` is queue name,`BadJob` is the class of which will complete the work. Param `[1]` is `array` params for `BadJob`. 
 In the root of project directory, run following code:
 ```PHP
 QUEUE=* ./yii resque
 ```
-*NOTICE*`*` means will start all queue.You can replace `*` with queue name or like this`QUEUE=default1,default2` will run specified queue.
+
+**NOTICE:**`*` means will start all queue.You can replace `*` with queue name or like this`QUEUE=default1,default2` will run specified queue.
 
 
