@@ -120,7 +120,6 @@ class ResqueController extends Controller
                 continue;
             } else {
                 if(preg_match('/\w+Job.php/',$file)){
-                    echo $file;
                     include_once $job_dir_name.DIRECTORY_SEPARATOR.$file;
                 }
             }

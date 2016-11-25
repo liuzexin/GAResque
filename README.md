@@ -100,9 +100,9 @@ The `perform()` method  will deal with work,`setUp()` will run at begin of work,
 
 ## Usage
 
-
+In the root of project directory, run following code:
 ```PHP
-QUEUE=* php yii resque
+QUEUE=* ./yii resque
 ```
 *NOTICE*`*` means will start all queue.You can replace `*` with queue name or like this`QUEUE=default1,default2` will run specified queue.
 
