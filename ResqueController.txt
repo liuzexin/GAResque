@@ -9,7 +9,7 @@
 namespace app\commands;
 !!!!!!!!---advanced
 namespace console\controllers;
-use yii\base\Controller;
+use yii\console\Controller;
 
 class ResqueController extends Controller
 {
