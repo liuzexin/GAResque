@@ -10,7 +10,7 @@
     }
   ],
   "require": {
-      "chrisboulton/php-resque": "dev-master@dev"
+      "chrisboulton/php-resque": "dev-master@stable"
   },
   "autoload": {
     "psr-4": {
