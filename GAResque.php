@@ -8,7 +8,7 @@
 
 namespace ga\resque;
 use \yii\base\Component;
-require_once  \Yii::getAlias('@vendor'). '/chrisboulton/php-resque/lib/Resque.php';
+
 class GAResque extends Component
 {
     public $server = 'localhost';
@@ -37,31 +37,31 @@ class GAResque extends Component
         return \Resque::enqueue($queue_name, $job_class, $param, $track_status);
     }
 
-//    /**
-//     * Remove items of the specified queue
-//     *
-//     * @param string $queue_name The name of the queue to fetch an item from.
-//     * @param array $items
-//     * @return integer number of deleted items
-//     */
+    /**
+     * Remove items of the specified queue
+     *
+     * @param string $queue_name The name of the queue to fetch an item from.
+     * @param array $items
+     * @return integer number of deleted items
+     */
 
-//    public function dequeue($queue_name, $items){
-//        return \Resque::dequeue($queue_name, $items);
-//    }
-//
-//    /**
-//     * Remove specified queue
-//     *
-//     * @param string $queue The name of the queue to remove.
-//     * @return integer Number of deleted items
-//     */
-//    public function removeQueue($queue){
-//        return \Resque::removeQueue($queue);
-//    }
-//
-//    public function blpop(array $queues, $timeout){
-//        return \Resque::blpop($queues, $timeout);
-//    }
+    public function dequeue($queue_name, $items){
+        return \Resque::dequeue($queue_name, $items);
+    }
+
+    /**
+     * Remove specified queue
+     *
+     * @param string $queue The name of the queue to remove.
+     * @return integer Number of deleted items
+     */
+    public function removeQueue($queue){
+        return \Resque::removeQueue($queue);
+    }
+
+    public function blpop(array $queues, $timeout){
+        return \Resque::blpop($queues, $timeout);
+    }
 
     /**
      * Return the size (number of pending jobs) of the specified queue.
