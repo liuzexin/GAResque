@@ -9,8 +9,9 @@
       "email": "liuzexin_top@163.com"
     }
   ],
+  "minimum-stability": "dev",
   "require": {
-      "chrisboulton/php-resque": "dev-master@stable"
+      "chrisboulton/php-resque": "dev-master@dev"
   },
   "autoload": {
     "psr-4": {
