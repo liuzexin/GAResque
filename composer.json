@@ -11,7 +11,7 @@
   ],
   "minimum-stability": "dev",
   "require": {
-      "chrisboulton/php-resque": "@dev"
+      "chrisboulton/php-resque": "dev-master"
   },
   "autoload": {
     "psr-4": {
