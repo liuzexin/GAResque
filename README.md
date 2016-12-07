@@ -1,6 +1,16 @@
 #Yii2-resque(best,easy)
 ##Install
 You need to use composer
+Primarily, You need to add the following code to**root package(project directory)**, because the newest php-resque is dev-master, the tagged version is oldest. 
+```json
+{
+    "require":{
+        ...
+        "chrisboulton/php-resque": "@dev"
+    }
+}
+```
+Then run:
 ```bash
 composer require ga/resque dev-master
 ```
