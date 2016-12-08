@@ -15,7 +15,7 @@ class ResqueController extends Controller
 {
     public function actionTest(){
 
-       echo \Yii::$app->resque->enqueue('default', 'BadJob', [1], true);
+       echo \Yii::$app->resque->enqueue('default', 'app\models\BadJob', [1], true);
 
     }
 
