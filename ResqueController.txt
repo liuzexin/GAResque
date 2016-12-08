@@ -25,21 +25,6 @@ class ResqueController extends Controller
             die("Set QUEUE env var containing the list of queues to work.\n");
         }
 
-        require_once  \Yii::getAlias('@vendor'). '/chrisboulton/php-resque/lib/Resque.php';
-        require_once  \Yii::getAlias('@vendor'). '/chrisboulton/php-resque/lib/Resque/Worker.php';
-
-        if(file_exists(\Yii::getAlias('@app').'/composer.json')){
-            $this->includeFile(\Yii::getAlias('@app'));
-        }else{
-            $this->includeFile(\Yii::getAlias('@backend'));
-            $this->includeFile(\Yii::getAlias('@frontend'));
-            $this->includeFile(\Yii::getAlias('@frontend'));
-            $this->includeFile(\Yii::getAlias('@console'));
-            $this->includeFile(\Yii::getAlias('@common'));
-        }
-
-
-
         $REDIS_BACKEND = getenv('REDIS_BACKEND');
         if(!empty($REDIS_BACKEND)) {
             \Resque::setBackend($REDIS_BACKEND);
@@ -110,20 +95,5 @@ class ResqueController extends Controller
             $worker->work($interval);
         }
 
-    }
-
-    private function includeFile($path){
-        $job_dir_name = $path . '/models';
-        $dir = dir($job_dir_name);
-        while(($file = $dir->read()) !== false){
-            if(is_dir($job_dir_name."/".$file) AND ($file!=".") AND ($file!="..")) {
-                continue;
-            } else {
-                if(preg_match('/\w+Job.php/',$file)){
-                    include_once $job_dir_name.DIRECTORY_SEPARATOR.$file;
-                }
-            }
-        }
-        $dir->close();
     }
 }

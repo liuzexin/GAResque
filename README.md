@@ -39,6 +39,7 @@ example:
 ```php
 MyJob.php
 <?php
+namespace app\models;
 class MyJob
 { 
     public function setUp()
@@ -58,7 +59,7 @@ class MyJob
 }
 ```
 The `perform()` method  will deal with work,`setUp()` will run at begin of work, `tearDown()`will run at finished work.
-*NOTICE:*You must name the job file must *end with* `Job.php`.
+**NOTICE:**You must enqueue with `\Yii::$app->resque->dequeue('default', 'app\models\MyJob', [1], true);`, Yii2 find the file by `autoloader` according to namesapce. 
 
 ### For Yii2-advanced
 
@@ -81,6 +82,10 @@ example:
 ```php
 MyJob.php
 <?php
+namespace backend\models;
+namespace console\models;
+namespace frontend\models;
+namespace common\models;
 class MyJob
 { 
     public function setUp()
@@ -101,7 +106,7 @@ class MyJob
 ```
 The `perform()` method  will deal with work,`setUp()` will run at begin of work, `tearDown()`will run at finished work.
 
-*NOTICE:You must name the job file must **end with** `Job.php`.
+**NOTICE:**You must enqueue with `\Yii::$app->resque->dequeue('default', 'backend\models\MyJob', [1], true);`, Yii2 find the file by `autoloader` according to namesapce.
 
 ## Usage
 
