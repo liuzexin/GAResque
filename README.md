@@ -124,7 +124,7 @@ More information you can also see the [php-resque][1].
 Param `default` is queue name,`BadJob` is the class of which will complete the work. Param `[1]` is `array` params for `BadJob`. 
 In the root of project directory, run following code:
 ```PHP
-QUEUE=* ./yii resque
+nohup QUEUE=* ./yii resque &
 ```
 
 **NOTICE:**`*` means will start all queues.You can replace `*` with queue name or like this`QUEUE=default1,default2` will run specified queue.
