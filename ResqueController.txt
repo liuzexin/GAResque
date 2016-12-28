@@ -20,6 +20,9 @@ class ResqueController extends Controller
     }
 
     public function actionIndex(){
+
+        //Initialize the resque configuration.
+        \Yii::$app->resque;
         $QUEUE = getenv('QUEUE');
         if(empty($QUEUE)) {
             die("Set QUEUE env var containing the list of queues to work.\n");
